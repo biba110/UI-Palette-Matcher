@@ -4,6 +4,10 @@ import pandas as pd
 import numpy as np
 import faiss
 from sentence_transformers import SentenceTransformer
+import os
+os.environ["OMP_NUM_THREADS"] = "1"
+import torch
+torch.set_num_threads(1)
 
 # 1. Start the API application instance
 app = FastAPI()
