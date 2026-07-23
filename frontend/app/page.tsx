@@ -13,9 +13,7 @@ export default function Home() {
     setLoading(true);
     try {
       // Pass both mood and selected category to the backend
-      const res = await fetch(
-        `http://127.0.0.1:8000/api/recommend?mood=${encodeURIComponent(mood)}&category=${encodeURIComponent(category)}`
-      );
+      const res = await fetch(`https://ui-palette-matcher.onrender.com/api/recommend?mood=${encodeURIComponent(mood)}&category=${encodeURIComponent(category)}`);
       const data = await res.json();
       setRecommendations(data.recommendations);
     } catch (error) {
